@@ -1,0 +1,8 @@
+# supervisor-monitor
+
+declare -A SMONITOR=()
+
+SMONITOR['version']=${SMONITOR_VERSION:-v1.1.0}
+SMONITOR['file']="/tmp/supervisord-monitor-${SMONITOR['version']}.tar.gz"
+SMONITOR['url']="https://github.com/mlazarov/supervisord-monitor/archive/${SMONITOR['version']}.tar.gz"
+SMONITOR['sha256']="bb21708aabdd471a87a1de30468f43a5c6504f68252993d4c94f970c7473e455"
