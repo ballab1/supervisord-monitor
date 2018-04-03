@@ -17,8 +17,10 @@ services:
             context: .
             dockerfile: Dockerfile
         container_name: smonitor
-#        environment:
-#            WEBDAV_USER: ${CFG_MYSQL_USER}
+        environment:
+        environment:
+            SMONITOR_PASS: ${CFG_PASS}
+            SMONITOR_USER: ${CFG_USER}
         hostname: smonitor
         image: supervisord-monitor:20180402
         logging:
