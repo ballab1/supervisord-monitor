@@ -1,8 +1,8 @@
 server {
     listen 80 default_server;
-    server_name nagios;
+    server_name smonitor;
 
-    root /usr/local/nagios/share;
+    root /usr/local/supervisord-monitor;
 
     index index.php index.html index.htm;
 
