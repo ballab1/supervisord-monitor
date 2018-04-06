@@ -1,11 +1,9 @@
-# supervisor-monitor
+#!/bin/bash
 
-declare -A SMONITOR=()
-
-SMONITOR['version']=${SMONITOR_VERSION:-v1.1.0}
-SMONITOR['file']="/tmp/smonitor-${SMONITOR['version']}.tar.gz"
-SMONITOR['url']="https://github.com/mlazarov/supervisord-monitor/archive/${SMONITOR['version']}.tar.gz"
-SMONITOR['sha256']="bb21708aabdd471a87a1de30468f43a5c6504f68252993d4c94f970c7473e455"
-SMONITOR['home']="${SMONITOR_HOME:-/usr/local/supervisord-monitor}"
-
-export WORKING_DIR=/usr/local/supervisord-monitor
+declare -A SMONITOR=(
+    ['version']=${SMONITOR_VERSION:-v1.1.0}
+    ['file']="/tmp/smonitor-${SMONITOR['version']}.tar.gz"
+    ['url']="https://github.com/mlazarov/supervisord-monitor/archive/${SMONITOR['version']}.tar.gz"
+    ['sha256']="bb21708aabdd471a87a1de30468f43a5c6504f68252993d4c94f970c7473e455"
+    ['home']="${SMONITOR_HOME:-/usr/local/supervisord-monitor}"
+)
