@@ -31,10 +31,14 @@ $config['supervisor_servers'] = array(
         'port' => '9001'
     ),
     'server04' => array(
-        'url' => 'http://phpadmin/RPC2',
+        'url' => 'http://nginx/RPC2',
         'port' => '9001'
     ),
     'server05' => array(
+        'url' => 'http://phpadmin/RPC2',
+        'port' => '9001'
+    ),
+    'server06' => array(
         'url' => 'http://zen/RPC2',
         'port' => '9001'
     ),
