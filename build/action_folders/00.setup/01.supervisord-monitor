@@ -5,4 +5,4 @@ declare -ar env_spd_mntr=(
     'WORKING_DIR="${WORKING_DIR:-/usr/local/supervisord-monitor}"'
 )
 
-lib.updateRuntimeEnvironment "${env_spd_mntr[*]}" 
+crf.updateRuntimeEnvironment "${env_spd_mntr[*]}" 
