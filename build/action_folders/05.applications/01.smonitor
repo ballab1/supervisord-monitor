@@ -1,0 +1,10 @@
+#/bin/bash
+
+tar xzvf "${SMONITOR['file']}"
+mv "supervisor-monitor-"* "supervisor-monitor-ws"
+cd "supervisor-monitor-ws" 
+
+rm supervisord-monitor/application/config/supervisor.php.example
+
+mkdir "${SMONITOR['home']}"
+mv * "${SMONITOR['home']}"

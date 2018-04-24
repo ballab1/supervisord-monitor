@@ -1,0 +1,8 @@
+#!/bin/bash
+
+declare -ar env_spd_mntr=(
+    'SMONITOR_HOME="${SMONITOR_HOME:-/usr/local/supervisord-monitor}"'
+    'WORKING_DIR="${WORKING_DIR:-/usr/local/supervisord-monitor}"'
+)
+
+crf.updateRuntimeEnvironment "${env_spd_mntr[*]}" 
