@@ -8,3 +8,8 @@ rm supervisord-monitor/application/config/supervisor.php.example
 
 mkdir "${SMONITOR['home']}"
 mv * "${SMONITOR['home']}"
+
+sed -e 's|listen 80;|listen 80 default_server;|' \
+    -e 's|server_name default;|server_name smonitor;|' \
+    -e 's|root\s+/var/www;|root /usr/local/supervisord-monitor;|' \
+    /etc/nginx/conf.d/default.server
