@@ -1,0 +1,12 @@
+#!/bin/bash
+
+declare -ar env_spd_mntr=(
+    'SMONITOR_HOME="${SMONITOR_HOME:-/usr/local/supervisord-monitor}"'
+    'WORKDIR="${SMONITOR_HOME}"'
+    'WWW="${SMONITOR_HOME}"'
+)
+
+#remove WORKDIR so it comes after WWW
+crf.removeFromRuntimeEnvironment 'WWW'
+crf.removeFromRuntimeEnvironment 'WORKDIR'
+crf.updateRuntimeEnvironment "${env_spd_mntr[@]}" 
