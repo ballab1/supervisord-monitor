@@ -14,33 +14,41 @@ $config['enable_alarm'] = true;
 $config['show_host'] = false;
 
 $config['supervisor_servers'] = array(
-    'server01' => array(
+    'smonitor' => array(
         'url' => 'http://smonitor/RPC2',
         'port' => '9001',
         'username' => 'bobb',
         'password' => '123Oleary'
-//        'username' => 'yourusername',
-//        'password' => 'yourpass'
     ),
-    'server02' => array(
+    'hubot' => array(
         'url' => 'http://hubot/RPC2',
         'port' => '9001'
+        'username' => 'bobb',
+        'password' => '123Oleary'
     ),
     'server03' => array(
         'url' => 'http://nagios/RPC2',
         'port' => '9001'
+        'username' => 'bobb',
+        'password' => '123Oleary'
     ),
-    'server04' => array(
+    'nginx' => array(
         'url' => 'http://nginx/RPC2',
         'port' => '9001'
+        'username' => 'bobb',
+        'password' => '123Oleary'
     ),
-    'server05' => array(
+    'phpadmin' => array(
         'url' => 'http://phpadmin/RPC2',
         'port' => '9001'
+        'username' => 'bobb',
+        'password' => '123Oleary'
     ),
-    'server06' => array(
+    'zen' => array(
         'url' => 'http://zen/RPC2',
         'port' => '9001'
+        'username' => 'bobb',
+        'password' => '123Oleary'
     ),
 );
 

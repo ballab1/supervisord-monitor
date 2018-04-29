@@ -1,25 +1,28 @@
-version: '3.5'
+version: '3.3'
 
 services:
     smonitor:
         build:
             args:
-                CBF_VERSION: ${CBF_VERSION:-dev}
-                CONTAINER_NAME: supervisord-monitor
-                CONTAINER_VERSION: 1.0.0
-                FROM_BASE: php5:${CONTAINER_TAG:-latest}
+                CBF_VERSION: "${CBF_VERSION:-}"
+                CONTAINER_NAME: smonitor
+                CONTAINER_VERSION: ${CONTAINER_VERSION:-3.0.0}
+                FROM_BASE: php7:${CONTAINER_TAG:-latest}
             cache_from:
-                - alpine:3.6
+                - alpine:3.8
                 - base_container:${CONTAINER_TAG:-latest}
                 - supervisord:${CONTAINER_TAG:-latest}
-                - php5:${CONTAINER_TAG:-latest}
+                - nginx_base:${CONTAINER_TAG:-latest}
+                - php8:${CONTAINER_TAG:-latest}
             context: .
             dockerfile: Dockerfile
         container_name: smonitor
         environment:
             DEBUG_TRACE: ${DEBUG_TRACE:-0}
-            SMONITOR_PASS: ${CFG_PASS}
-            SMONITOR_USER: ${CFG_USER}
+            SMONITOR_PASS: $CFG_PASS
+            SMONITOR_USER: $CFG_USER
+            SUPERVISORD_PASS: $CFG_PASS
+            SUPERVISORD_USER: $CFG_USER 
         hostname: smonitor
         image: supervisord-monitor:${CONTAINER_TAG:-latest}
         logging:
@@ -32,4 +35,5 @@ services:
 # only use when building a 'service container'
 #        restart: unless-stopped
         volumes:
-            - ./vols/log:/var/log 
+            - ./vols/log:/var/log
+            - ./build/container_build_framework/crf/bashlib:/usr/local/crf/bashlib
