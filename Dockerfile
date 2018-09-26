@@ -1,4 +1,4 @@
-ARG FROM_BASE=${DOCKER_REGISTRY:-}${OS:-}php/5.6.37-r0:${BASE_TAG:-latest}
+ARG FROM_BASE=${DOCKER_REGISTRY:-}${OS:-}php/${PHP5_VERSION:-5.6.37-r0}:${BASE_TAG:-latest}
 FROM $FROM_BASE
 
 # name and version of this docker image
@@ -15,6 +15,7 @@ ENV DEBUG_TRACE=0
 
 
 ARG SMONITOR_VERSION=v1.1.0
+LABEL smonitor.version=$SMONITOR_VERSION
 
 
 # build content
