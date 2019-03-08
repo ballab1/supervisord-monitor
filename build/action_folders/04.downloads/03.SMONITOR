@@ -1,0 +1,9 @@
+#!/bin/bash
+
+declare -A SMONITOR=()
+SMONITOR['version']=${SMONITOR_VERSION:?}
+SMONITOR['file']="/tmp/smonitor-${SMONITOR['version']}.tar.gz"
+SMONITOR['url']="https://github.com/mlazarov/supervisord-monitor/archive/${SMONITOR['version']}.tar.gz"
+SMONITOR['sha256_v1.1.0']="bb21708aabdd471a87a1de30468f43a5c6504f68252993d4c94f970c7473e455"
+SMONITOR['sha256']="${SMONITOR['sha256_'${SMONITOR['version']}]}" 
+SMONITOR['home']="${SMONITOR_HOME:-/usr/local/supervisord-monitor}"
