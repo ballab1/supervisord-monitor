@@ -1,0 +1,10 @@
+#/bin/bash
+
+tar xzvf "${SMONITOR['file']}" -C /tmp
+mkdir -p "$SMONITOR_HOME"
+mv "/tmp/supervisord-monitor-${SMONITOR['version']#v}"/* /usr/local/supervisord-monitor
+
+cd "$SMONITOR_HOME"
+[ -e "application/config/supervisor.php.example" ] && rm "application/config/supervisor.php.example"
+
+crf.fixupDirectory "$SMONITOR_HOME" "$WWW_UID"
